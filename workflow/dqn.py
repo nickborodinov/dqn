@@ -33,7 +33,7 @@ config = ConfigProto()
 config.gpu_options.allow_growth = True
 session = InteractiveSession(config=config)
 
-class DQNAgent:
+class dqn:
 
     def __init__(self,action_size=3,gamma=0.5,epsilon=0.8,epsilon_min=0,epsilon_decay=0.992,
         box = [16, 32, 4],box_extension=32,target_roughness=0.98,episodes=150,wdir=r"C:\Users\ni1\Documents\RL\kmcsim\data\working",
@@ -141,8 +141,8 @@ class DQNAgent:
             self.run_train_session_once(verbose=verbose,plotit=plotit)
             self.learning[run] = self.timestep
             
-    def load(self, name):
+    def load_session(self, name):
         self.model.load_weights(name)
 
-    def save(self, name):
+    def save_session(self, name):
         self.model.save_weights(name)
